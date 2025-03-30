@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+body {
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    overscroll-behavior: none;
+}
+
+/* Game canvas container */
+#app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Virtual controls */
+.control-pad {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+#steering-control {
+    bottom: 30px;
+    left: 30px;
+}
+
+#pedal-control {
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.control-button {
+    width: 80px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* HUD elements */
+.hud {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .control-pad {
+        width: 100px;
+        height: 100px;
+    }
+    .control-button {
+        width: 70px;
+        height: 35px;
+    }
+}
